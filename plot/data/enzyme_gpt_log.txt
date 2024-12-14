@@ -1,0 +1,73 @@
+nohup: ignoring input
+OMP is defined
+Num threads: 48
+[GPT-2]
+max_seq_len: 1024
+vocab_size: 50257
+padded_vocab_size: 50304
+num_layers: 12
+num_heads: 12
+channels: 768
+num_parameters: 124475904
+[GPT-2]
+max_seq_len: 1024
+vocab_size: 50257
+padded_vocab_size: 50304
+num_layers: 12
+num_heads: 12
+channels: 768
+num_parameters: 124475904
+num_activations: 73347840
+num_activations: 73347840
+train dataset num_batches: 1192
+val dataset num_batches: 128
+val loss 5.325521
+step 0: train loss 4.677772 (took 65939.814005 ms)
+step 1: train loss 5.398969 (took 64606.992140 ms)
+step 2: train loss 4.989898 (took 64707.486962 ms)
+step 3: train loss 4.645216 (took 64637.706178 ms)
+step 4: train loss 4.535881 (took 64606.501550 ms)
+val loss 5.010791
+step 5: train loss 4.567311 (took 64607.400343 ms)
+step 6: train loss 4.434838 (took 64689.981631 ms)
+step 7: train loss 4.434444 (took 64680.794322 ms)
+step 8: train loss 4.517156 (took 64640.092017 ms)
+step 9: train loss 4.570694 (took 64852.065754 ms)
+val loss 4.795465
+step 10: train loss 4.472080 (took 64688.207957 ms)
+step 11: train loss 4.435953 (took 64750.528518 ms)
+step 12: train loss 4.210717 (took 64676.934691 ms)
+step 13: train loss 4.682723 (took 64637.855561 ms)
+step 14: train loss 4.537892 (took 64722.822995 ms)
+val loss 4.661596
+step 15: train loss 4.591377 (took 64581.326878 ms)
+step 16: train loss 4.118345 (took 64759.040536 ms)
+step 17: train loss 4.507001 (took 64663.347337 ms)
+step 18: train loss 4.214896 (took 64597.441461 ms)
+step 19: train loss 4.830546 (took 64793.335687 ms)
+val loss 4.546501
+step 20: train loss 4.526665 (took 64678.255112 ms)
+step 21: train loss 4.420367 (took 64732.209352 ms)
+step 22: train loss 4.184669 (took 64709.898679 ms)
+step 23: train loss 3.734571 (took 64658.073817 ms)
+step 24: train loss 4.594570 (took 64755.656069 ms)
+val loss 4.452114
+step 25: train loss 4.222163 (took 64684.693800 ms)
+step 26: train loss 3.847980 (took 64710.106345 ms)
+step 27: train loss 4.220455 (took 64758.547088 ms)
+step 28: train loss 4.455548 (took 64642.232958 ms)
+step 29: train loss 4.532023 (took 64739.946179 ms)
+val loss 4.389969
+step 30: train loss 4.316846 (took 64657.182695 ms)
+step 31: train loss 4.917089 (took 63585.977093 ms)
+step 32: train loss 4.516826 (took 63686.672533 ms)
+step 33: train loss 4.123207 (took 63699.799167 ms)
+step 34: train loss 4.465712 (took 62682.184678 ms)
+val loss 4.360292
+step 35: train loss 3.622287 (took 62774.169995 ms)
+step 36: train loss 3.876152 (took 62638.519056 ms)
+step 37: train loss 3.549468 (took 61812.376595 ms)
+step 38: train loss 3.562306 (took 61598.466845 ms)
+step 39: train loss 4.044739 (took 61628.140399 ms)
+val loss 4.326075
+step 40: train loss 4.081340 (took 60753.833213 ms)
