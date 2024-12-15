@@ -1,0 +1,73 @@
+- bench gpt enzyme, OMP (24)  
+    to run:
+    - uncomment  #pragma omp parallel
+    - /h/332/markz/proj/llvm19//build/bin/clang-19 -x c++ -O3 train_gpt2.c -DOMP -DOMP_THREAD_LIMIT=24 -fopenmp -lomp -L/h/332/markz/benchmark/lib -lbenchmark -L/h/332/markz/proj/llvm19/build/lib/x86_64-unknown-linux-gnu/libomp.so -lm -fplugin=/h/332/markz/Enzyme/enzyme/build/Enzyme/ClangEnzyme-19.so -DTESTING -I/h/332/markz/benchmark/include -pthread -Wl -mllvm=-enzyme-inline -lstdc++
+    - OMP_THREAD_LIMIT=24 LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/h/332/markz/proj/llvm19/build/lib/x86_64-unknown-linux-gnu ./a.out
+    
+    ```bash
+    ---------------------------------------------------------------------------------
+    Benchmark                                       Time             CPU   Iterations
+    ---------------------------------------------------------------------------------
+    BM_EnzymeForward/iterations:10          921887031 ns    921486153 ns           10
+    BM_EnzymeForwardBackward/iterations:10 4.8109e+10 ns   4.7944e+10 ns           10
+    
+    ---------------------------------------------------------------------------------
+    Benchmark                                       Time             CPU   Iterations
+    ---------------------------------------------------------------------------------
+    BM_EnzymeForward/iterations:25          877361341 ns    877235381 ns           25
+    BM_EnzymeForwardBackward/iterations:25 4.7049e+10 ns   4.6796e+10 ns           25
+    ```
+    
+- bench gpt orig, OMP (24)
+	to run:
+    - uncomment  #pragma omp parallel
+    - /h/332/markz/proj/llvm19//build/bin/clang-19 -x c++ -O3 train_gpt2_orig.c -DOMP -DOMP_THREAD_LIMIT=24 -fopenmp -lomp -L/h/332/markz/benchmark/lib -lbenchmark -L/h/332/markz/proj/llvm19/build/lib/x86_64-unknown-linux-gnu/libomp.so -lm -fplugin=/h/332/markz/Enzyme/enzyme/build/Enzyme/ClangEnzyme-19.so -DTESTING -I/h/332/markz/benchmark/include -pthread -Wl -mllvm=-enzyme-inline -lstdc++
+    - OMP_THREAD_LIMIT=24 LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/h/332/markz/proj/llvm19/build/lib/x86_64-unknown-linux-gnu ./a.out
+    
+    ```bash
+    -----------------------------------------------------------------------------------
+    Benchmark                                         Time             CPU   Iterations
+    -----------------------------------------------------------------------------------
+    BM_OriginalForward/iterations:10          975530942 ns    975161154 ns           10
+    BM_OriginalForwardBackward/iterations:10 2557373586 ns   2557323503 ns           10
+    
+    -----------------------------------------------------------------------------------
+    Benchmark                                         Time             CPU   Iterations
+    -----------------------------------------------------------------------------------
+    BM_OriginalForward/iterations:25          895471955 ns    895311463 ns           25
+    BM_OriginalForwardBackward/iterations:25 2404048634 ns   2404017763 ns           25
+    ```
+    
+- bench gpt orig, no OMP
+	to run:
+    - comment out  #pragma omp parallel
+    - /h/332/markz/proj/llvm19//build/bin/clang-19 -x c++ -O3 train_gpt2_orig.c -fopenmp -L/h/332/markz/2516/llm.c/benchmark/lib -lbenchmark -lm -fplugin=/h/332/markz/Enzyme/enzyme/build/Enzyme/ClangEnzyme-19.so -DTESTING -I/h/332/markz/benchmark/include -pthread -Wl -mllvm=-enzyme-inline -lstdc++
+    - LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/h/332/markz/proj/llvm19/build/lib/x86_64-unknown-linux-gnu ./a.out
+    
+    ```bash
+    ----------------------------------------------------------------------------------
+    Benchmark                                        Time             CPU   Iterations
+    ----------------------------------------------------------------------------------
+    BM_OriginalForward/iterations:5         7704251547 ns   7704070226 ns            5
+    BM_OriginalForwardBackward/iterations:5 2.0155e+10 ns   2.0155e+10 ns            5
+    ```
+    
+    ```bash
+    -----------------------------------------------------------------------------------
+    Benchmark                                         Time             CPU   Iterations
+    -----------------------------------------------------------------------------------
+    BM_OriginalForward/iterations:25         7686845422 ns   7686337570 ns           25
+    BM_OriginalForwardBackward/iterations:25 1.9910e+10 ns   1.9910e+10 ns           25
+    ```
+    
+- bench gpt enzyme, no OMP
+	to run:
+    - comment out  #pragma omp parallel
+    - /h/332/markz/proj/llvm19//build/bin/clang-19 -x c++ -O3 train_gpt2.c -fopenmp -L/h/332/markz/2516/llm.c/benchmark/lib -lbenchmark -lm -fplugin=/h/332/markz/Enzyme/enzyme/build/Enzyme/ClangEnzyme-19.so -DTESTING -I/h/332/markz/benchmark/include -pthread -Wl -mllvm=-enzyme-inline -lstdc++
+    - LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/h/332/markz/proj/llvm19/build/lib/x86_64-unknown-linux-gnu ./a.out
+	---------------------------------------------------------------------------------
+	---------------------------------------------------------------------------------
+Benchmark                                       Time             CPU   Iterations
+---------------------------------------------------------------------------------
+BM_EnzymeForward/iterations:25         7764991010 ns   7764405906 ns           25
+BM_EnzymeForwardBackward/iterations:25 7.0440e+10 ns   7.0432e+10 ns           25
