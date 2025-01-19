@@ -1,4 +1,4 @@
-# CSC2516 Final Submission
+# Performance of EnzymeAD in Real World High-Complexity Deep Learning Models
 
 This repository contains the final submission for CSC2516, including experiments and implementations related to training GPT-2 and layer-wise optimization.
 
