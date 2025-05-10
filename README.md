@@ -1,6 +1,6 @@
 # Performance of EnzymeAD in Real World High-Complexity Deep Learning Models
 
-This repository contains the final submission for CSC2516, including experiments and implementations related to training GPT-2 and layer-wise optimization.
+Machine Learning research has traditionally been carried out in Python. Popular libraries like PyTorch, JAX, and TensorFlow optimize tensor operations with features like automatic differentiation, vectorization, and parallelization. While these features could be implemented manually, their complexity makes it impractical for fast prototyping, making these tools valuable for scientific and high-performance computing. However, despite those valuable tools, Python was not designed to be a performant language on pair with Fortran, C++, or Rust, so scientist encounter a tension between good tooling in Python, and efficient programs in other languages. Python overhead can be amortized by implementing key operations in more efficient languages and extensive optimizations of few critical layers, common in Large Language Models (LLM). Lately however, the low level compiler framework "LLVM", used by languages like Rust, Julia, and C++, gained a new feature for automatic differentiation. This could enable scientists and developers to achieve both fast prototyping and efficient implementations in the same language. To understand how close such a new LLVM feature brings us to our goal, we analyze how well this new feature compares, when tested against a handwritten, well-optimized LLM implementation.
 
 ## Repository Structure
 
